@@ -10,5 +10,5 @@ abstract class Failure extends Equatable {
 }
 
 class StockAlertFailure extends Failure {
-  const StockAlertFailure(String message) : super(message);
+  const StockAlertFailure(super.message);
 }
