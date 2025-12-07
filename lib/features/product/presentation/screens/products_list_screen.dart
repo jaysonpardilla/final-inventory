@@ -158,6 +158,17 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                   products.sort((a, b) => b.name.compareTo(a.name));
                 }
 
+                /// 🔹 Filter Low Stock (example: stock less than 10)
+                if (filter == "low") {
+                  products = products.where((p) => p.quantityInStock < 10).toList();
+                }
+
+                /// 🔹 Filter High Stock (example: stock greater than or equal to 10)
+                else if (filter == "high") {
+                  products = products.where((p) => p.quantityInStock >= 10).toList();
+                }
+
+
                 if (products.isEmpty) {
                   return const Center(child: Text("No products found"));
                 }
