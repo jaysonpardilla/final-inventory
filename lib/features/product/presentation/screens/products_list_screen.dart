@@ -21,9 +21,9 @@ class ProductsListScreen extends StatefulWidget {
 }
 
 class _ProductsListScreenState extends State<ProductsListScreen> {
-  String searchQuery = "";
   String filter = "none";
   int itemsToShow = 10;
+  String searchQuery = "";
 
   String _filterLabel(String filter) {
     switch (filter) {
@@ -183,7 +183,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                         itemBuilder: (context, index) {
                           final p = paginatedProducts[index];
                           return Container(
-                            margin: const EdgeInsets.all(8),
+                            margin: const EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Colors.grey[100],
                               borderRadius: BorderRadius.circular(8),
@@ -193,7 +193,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                                   ? CircleAvatar(backgroundImage: NetworkImage(p.imageUrl))
                                   : const CircleAvatar(child: Icon(Icons.inventory)),
 
-                              title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w600)),
+                              title: Text(p.name, style: const TextStyle(fontWeight: FontWeight.w400)),
                               subtitle: Text("Stock: ${p.quantityInStock} | ₱${p.price.toStringAsFixed(2)}"),
 
                               trailing: Row(
@@ -260,8 +260,9 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
 /// ===========================================================
 
 class AddEditProductScreen extends StatefulWidget {
-  final Product? product;
   const AddEditProductScreen({super.key, this.product});
+
+  final Product? product;
 
   @override
   State<AddEditProductScreen> createState() => _AddEditProductScreenState();
@@ -269,17 +270,14 @@ class AddEditProductScreen extends StatefulWidget {
 
 class _AddEditProductScreenState extends State<AddEditProductScreen> {
   final _formKey = GlobalKey<FormState>();
-
-  final _nameController = TextEditingController();
-  final _priceController = TextEditingController();
-  final _stockController = TextEditingController();
-
-  String? _selectedCategoryId;
-  String? _selectedSupplierId;
-
   File? _imageFile;
   bool _isSaving = false;
   bool _loading = true;
+  final _nameController = TextEditingController();
+  final _priceController = TextEditingController();
+  String? _selectedCategoryId;
+  String? _selectedSupplierId;
+  final _stockController = TextEditingController();
 
   @override
   void initState() {

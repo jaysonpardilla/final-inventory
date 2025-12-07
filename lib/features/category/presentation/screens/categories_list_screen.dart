@@ -186,7 +186,7 @@ class _CategoriesListScreenState extends State<CategoriesListScreen> {
                                   : const CircleAvatar(child: Icon(Icons.image)),
                               title: Text(
                                 cat.name,
-                                style: const TextStyle(fontWeight: FontWeight.w600),
+                                style: const TextStyle(fontWeight: FontWeight.w400),
                               ),
                               trailing: const Icon(Icons.chevron_right),
                               onTap: () {

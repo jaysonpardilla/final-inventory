@@ -39,7 +39,7 @@ class DashboardScreen extends StatelessWidget {
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 39, 117, 159),
+                    Color.fromARGB(255, 6, 34, 49),
                     Color.fromARGB(255, 8, 44, 116),
                   ],
                   begin: Alignment.topLeft,
@@ -70,7 +70,7 @@ class DashboardScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 8,
+                    top: 40,
                     right: 8,
                     child: Icon(Icons.close, color: Colors.white),
                   ),

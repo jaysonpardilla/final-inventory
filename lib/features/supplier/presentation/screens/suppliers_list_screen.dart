@@ -152,7 +152,7 @@ class _SuppliersListScreenState extends State<SuppliersListScreen> {
                                   : const CircleAvatar(child: Icon(Icons.business)),
                               title: Text(
                                 s.name,
-                                style: const TextStyle(fontWeight: FontWeight.w600),
+                                style: const TextStyle(fontWeight: FontWeight.w400),
                               ),
                               subtitle: Text(
                                 s.email.isNotEmpty ? s.email : "No email",
